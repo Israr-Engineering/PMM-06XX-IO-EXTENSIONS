@@ -19,19 +19,16 @@
           "size": "7784346",
           "boards": [
 
-           
             {"name": "PMM0620X"},
             {"name": "PMM0625X"},
             {"name": "PMM0626X"},
             {"name": "PMM0628RX"},
-            {"name": "PMM0628TX"}
+            {"name": "PMM0628TX"},
             {"name": "PMM0632X"},
             {"name": "PMM0632XP"},
             {"name": "PMM0635XP"},
             {"name": "PMM0638XP"},
             {"name": "PMM0639XP"}
-
-
 
           ],
           "toolsDependencies":
