@@ -1,17 +1,3 @@
-/*
-  Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
-  This library is free software; you can redistribute it and/or
-  modify it under the terms of the GNU Lesser General Public
-  License as published by the Free Software Foundation; either
-  version 2.1 of the License, or (at your option) any later version.
-  This library is distributed in the hope that it will be useful,
-  but WITHOUT ANY WARRANTY; without even the implied warranty of
-  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-  See the GNU Lesser General Public License for more details.
-  You should have received a copy of the GNU Lesser General Public
-  License along with this library; if not, write to the Free Software
-  Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
-*/
 
 #include "variant.h"
 
@@ -20,21 +6,25 @@
  */
 const PinDescription g_APinDescription[] =
     {
+
         // 0..13 - Digital pins
         // ----------------------
         // 0/1 - SERCOM/UART (Serial1)
-        { PORTA, 11, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_11 }, // RX: SERCOM0/PAD[3]
-        //(1)
-        { PORTA, 10, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_10 }, // TX: SERCOM0/PAD[2]
-        // Edited 0620
+         //(0)
+         { PORTA, 11, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_11 }, // RX: SERCOM0/PAD[3]
+         //(1)
+         { PORTA, 10, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_10 }, // TX: SERCOM0/PAD[2]
+        // Edited 0632
+
+
         //(2)
-        {PORTA, 4, PIO_ANALOG, 0, ADC_Channel4, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_4},                        // ADC/AIN[4]
+        {PORTB, 8, PIO_ANALOG, (PIN_ATTR_PWM | PIN_ATTR_TIMER), ADC_Channel2, PWM4_CH0, TC4_CH0, EXTERNAL_INT_8}, // ADC/AIN[2]
         //(3)
-        {PORTA, 5, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM1_CH0, TCC1_CH0, EXTERNAL_INT_6}, // TCC1/WO[0]
+        {PORTB, 9, PIO_ANALOG, (PIN_ATTR_PWM | PIN_ATTR_TIMER), ADC_Channel3, PWM4_CH1, TC4_CH1, EXTERNAL_INT_9}, // ADC/AIN[3] 
         //(4)
-        {PORTA, 6, PIO_ANALOG, 0, ADC_Channel5, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_5},                                                      // ADC/AIN[5]
+        {PORTA, 4, PIO_ANALOG, 0, ADC_Channel4, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_4},                        // ADC/AIN[4]
         //(5)
-        {PORTA, 7, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM1_CH1, TCC1_CH1, EXTERNAL_INT_7}, // TCC1/WO[1]
+        {PORTA, 5, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM1_CH0, TCC1_CH0, EXTERNAL_INT_6}, // TCC1/WO[0]
         //(6)
         {PORTA, 8, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER | PIN_ATTR_ANALOG), ADC_Channel16, PWM0_CH0, TCC0_CH0, EXTERNAL_INT_NMI}, // TCC0/WO[0]
         //(7)
@@ -43,17 +33,29 @@ const PinDescription g_APinDescription[] =
         {PORTA, 10, PIO_SERCOM, (PIN_ATTR_DIGITAL | PIN_ATTR_ANALOG), ADC_Channel18, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_10}, // TX: SERCOM0/PAD[2]
         //(9)
         {PORTA, 11, PIO_SERCOM, (PIN_ATTR_DIGITAL | PIN_ATTR_ANALOG), ADC_Channel19, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_11}, // RX: SERCOM0/PAD[3]
+       
+
+
+
+       
+       
+       
         //(10)
-        {PORTA, 13, PIO_PWM, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM), No_ADC_Channel, PWM0_CH5, NOT_ON_TIMER, EXTERNAL_INT_13},       // EIC/EXTINT[13] *TCC2/WO[1] TCC0/WO[7]
+        {PORTA, 6, PIO_ANALOG, 0, ADC_Channel5, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_5},                                                      // ADC/AIN[5]
         //(11)
-        {PORTA, 20, PIO_TIMER_ALT, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH6, TCC0_CH6, EXTERNAL_INT_4}, // TCC0/WO[6]
+        {PORTA, 7, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM1_CH1, TCC1_CH1, EXTERNAL_INT_7}, // TCC1/WO[1]
+        
         //(12)
-        {PORTA, 21, PIO_TIMER_ALT, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH7, TCC0_CH7, EXTERNAL_INT_5}, // TCC0/WO[7]
+        {PORTA, 13, PIO_PWM, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM), No_ADC_Channel, PWM0_CH5, NOT_ON_TIMER, EXTERNAL_INT_13},       // EIC/EXTINT[13] *TCC2/WO[1] TCC0/WO[7]
         //(13)
-        {PORTB, 2, PIO_ANALOG, 0, ADC_Channel10, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2},                       // ADC/AIN[10]
+        {PORTA, 20, PIO_TIMER_ALT, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH6, TCC0_CH6, EXTERNAL_INT_4}, // TCC0/WO[6]
         //(14)
-        {PORTB, 3, PIO_OUTPUT, PIN_ATTR_DIGITAL, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE},  // used as output only
+        {PORTA, 21, PIO_TIMER_ALT, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH7, TCC0_CH7, EXTERNAL_INT_5}, // TCC0/WO[7]
         //(15)
+        {PORTB, 2, PIO_ANALOG, 0, ADC_Channel10, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2},                       // ADC/AIN[10]
+        //(16)
+        {PORTB, 3, PIO_OUTPUT, PIN_ATTR_DIGITAL, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE},  // used as output only
+        //(17)
         {PORTA, 6, PIO_ANALOG, 0, ADC_Channel5, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_5},  // ADC/AIN[5]
        
 
@@ -62,155 +64,154 @@ const PinDescription g_APinDescription[] =
          
          
                                                                                                                         // Digital Low
-        //(16)
+        //(18)
         {PORTA, 14, PIO_DIGITAL, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_14},
 
         // {PORTA, 9, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM0_CH1, TCC0_CH1, EXTERNAL_INT_9},          // TCC0/WO[1]
         // {PORTA, 8, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM0_CH0, TCC0_CH0, EXTERNAL_INT_NMI},        // TCC0/WO[0]
-        //(17)
+        //(19)
         {PORTA, 15, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM3_CH1, TC3_CH1, EXTERNAL_INT_15},         // TC3/WO[1]
         // Digital High
-        //(18)
+        //(20)
         {PORTA, 5, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM1_CH0, TCC1_CH0, EXTERNAL_INT_6}, // TCC1/WO[0]
 
         // {PORTA, 18, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM3_CH0, TC3_CH0, EXTERNAL_INT_2},  // TC3/WO[0]
         // {PORTA, 16, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM2_CH0, TCC2_CH0, EXTERNAL_INT_0}, // TCC2/WO[0]
-        //(19)
-        {PORTA, 18, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM3_CH0, TC3_CH0, EXTERNAL_INT_2},  // TC3/WO[0]
-        //(20)
-        {PORTA, 16, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM2_CH0, TCC2_CH0, EXTERNAL_INT_0}, // TCC2/WO[0]
         //(21)
+        {PORTA, 18, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM3_CH0, TC3_CH0, EXTERNAL_INT_2},  // TC3/WO[0]
+        //(22)
+        {PORTA, 16, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM2_CH0, TCC2_CH0, EXTERNAL_INT_0}, // TCC2/WO[0]
+
+        //(23)
         {PORTA, 19, PIO_TIMER_ALT, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH3, TCC0_CH3, EXTERNAL_INT_3}, // TCC0/WO[3]
 
         // 13 (LED)
-        //(22)
+        //(24)
         {PORTA, 17, PIO_PWM, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM2_CH1, TCC2_CH1, EXTERNAL_INT_1}, // TCC2/WO[1]
 
         // 14..19 - Analog pins
         // --------------------
-        //(23)
-        {PORTA, 2, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2},          // ADC/AIN[0]
-        //(24)
-        {PORTB, 8, PIO_ANALOG, (PIN_ATTR_PWM | PIN_ATTR_TIMER), ADC_Channel2, PWM4_CH0, TC4_CH0, EXTERNAL_INT_8}, // ADC/AIN[2]
         //(25)
-        {PORTB, 9, PIO_ANALOG, (PIN_ATTR_PWM | PIN_ATTR_TIMER), ADC_Channel3, PWM4_CH1, TC4_CH1, EXTERNAL_INT_9}, // ADC/AIN[3]
+        {PORTA, 2, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2},          // ADC/AIN[0]
         
+        
+
 
         // 20..21 I2C pins (SDA/SCL and also EDBG:SDA/SCL)
         // ----------------------
         //(26)
         {PORTA, 22, PIO_SERCOM, PIN_ATTR_DIGITAL, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_6}, // SDA: SERCOM3/PAD[0]
-        //(27)
-        {PORTA, 23, PIO_SERCOM, PIN_ATTR_DIGITAL, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_7}, // SCL: SERCOM3/PAD[1]
+        //(0){PORTA, 23, PIO_SERCOM, PIN_ATTR_DIGITAL, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_7}, // SCL: SERCOM3/PAD[1]
+
 
         // 22..24 - SPI pins (ICSP:MISO,SCK,MOSI)
         // ----------------------
-        //(28)
+        //(27)
         {PORTA, 12, PIO_SERCOM_ALT, PIN_ATTR_DIGITAL, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_12}, // MISO: SERCOM4/PAD[0]
-        //(29)
+        //(28)
         {PORTB, 10, PIO_SERCOM_ALT, PIN_ATTR_DIGITAL, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_10}, // MOSI: SERCOM4/PAD[2]
-        //(30)
+        //(29)
         {PORTB, 11, PIO_SERCOM_ALT, PIN_ATTR_DIGITAL, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_11}, // SCK: SERCOM4/PAD[3]
 
         // 25..26 - RX/TX LEDS (PB03/PA27)
         // --------------------
         
-        //(31)
+        //(30)
         {PORTA, 27, PIO_OUTPUT, PIN_ATTR_DIGITAL, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // used as output only
 
         // 27..29 - USB
         // --------------------
-        //(32)
+        //(31)
         {PORTA, 28, PIO_COM, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // USB Host enable
-        //(33)
+        //(32)
         {PORTA, 24, PIO_COM, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // USB/DM
-        //(34)
+        //(33)
         {PORTA, 25, PIO_COM, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // USB/DP
 
         // 30..41 - EDBG
         // ----------------------
         // 30/31 - EDBG/UART
-        //(35)
-        {PORTB, 22, PIO_SERCOM_ALT, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // TX: SERCOM5/PAD[2]
-        //(36)
+        //(0){PORTB, 22, PIO_SERCOM_ALT, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // TX: SERCOM5/PAD[2]
+
+        //(34)
         {PORTB, 23, PIO_SERCOM_ALT, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // RX: SERCOM5/PAD[3]
 
         // 32/33 I2C (SDA/SCL and also EDBG:SDA/SCL)
-        //(37)
-        {PORTA, 22, PIO_SERCOM, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // SDA: SERCOM3/PAD[0]
-        //(38)
+        //(0){PORTA, 22, PIO_SERCOM, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // SDA: SERCOM3/PAD[0]
+
+        //(35)
         {PORTA, 23, PIO_SERCOM, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // SCL: SERCOM3/PAD[1]
 
         // 34..37 - EDBG/SPI
-        //(39)
+        //(36)
         {PORTA, 19, PIO_SERCOM, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // MISO: SERCOM1/PAD[3]
-        //(40)
+        //(37)
         {PORTA, 16, PIO_SERCOM, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // MOSI: SERCOM1/PAD[0]
-        //(41)
+        //(38)
         {PORTA, 18, PIO_SERCOM, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // SS: SERCOM1/PAD[2]
-        //(42)
+        //(39)
         {PORTA, 17, PIO_SERCOM, PIN_ATTR_NONE, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // SCK: SERCOM1/PAD[1]
                                                                                                              // { PORTA, 11, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_11 }, // RX: SERCOM0/PAD[3]
                                                                                                              // { PORTA, 10, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_10 }, // TX: SERCOM0/PAD[2]
                                                                                                              // 38..41 - EDBG/Digital
         
-        //(43)
+        //(40)
         {PORTA, 21, PIO_PWM_ALT, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM), No_ADC_Channel, PWM0_CH7, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // Pin 7
-        //(44)
+        //(41)
         {PORTA, 6, PIO_PWM, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM), No_ADC_Channel, PWM1_CH0, NOT_ON_TIMER, EXTERNAL_INT_NONE},      // Pin 8
-        //(45)
+        //(42)
         {PORTA, 7, PIO_PWM, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM), No_ADC_Channel, PWM1_CH1, NOT_ON_TIMER, EXTERNAL_INT_NONE},      // Pin 9
 
         // 42 (AREF)
-        //(46)
+        //(43)
         {PORTA, 3, PIO_ANALOG, PIN_ATTR_ANALOG, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // DAC/VREFP
 
         // ----------------------
         // 43..45 - Alternate use of A0 (DAC output), 44 SWCLK, 45, SWDIO
-        //(47)
+        //(44)
         {PORTA, 2, PIO_ANALOG, PIN_ATTR_ANALOG, DAC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2},            // DAC/VOUT
-        //(48)
+        //(45)
         {PORTA, 30, PIO_PWM, PIN_ATTR_DIGITAL | PIO_SERCOM, No_ADC_Channel, NOT_ON_PWM, TCC1_CH0, EXTERNAL_INT_10}, // SWCLK
-        //(49)
+        //(46)
         {PORTA, 31, PIO_PWM, PIN_ATTR_DIGITAL | PIO_SERCOM, No_ADC_Channel, NOT_ON_PWM, TCC1_CH1, EXTERNAL_INT_11}, // SWDIO
 
-// Samd21j15a pins
+	// Samd21j15a pins
 
+	//(47)
+  {PORTB, 4, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel12, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_4},
+	//(48)
+  {PORTB, 5, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel13, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_5},
+	//(49)
+  {PORTB, 6, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel14, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_6},
 	//(50)
-  {PORTB, 4, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_4},
+  {PORTB, 7, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel15, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_7},
 	//(51)
-  {PORTB, 5, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_5},
+  {PORTB, 0, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel8, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_0},
 	//(52)
-  {PORTB, 6, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_6},
+  {PORTB, 1, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel9, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_1},
 	//(53)
-  {PORTB, 7, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_7},
+  {PORTB, 2, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel10, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2},
 	//(54)
-  {PORTB, 0, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_0},
+  {PORTB, 3, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel11, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_3},
 	//(55)
-  {PORTB, 1, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_1},
-	//(56)
-  {PORTB, 2, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_2},
-	//(57)
-  {PORTB, 3, PIO_ANALOG, PIN_ATTR_ANALOG, ADC_Channel0, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_3},
-	//(58)
   {PORTB, 12, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER},
-	//(59)
+	//(56)
   {PORTB, 13, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER},
-	//(60)
+	//(57)
   {PORTB, 14, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER},
-	//(61)
+	//(58)
   {PORTB, 15, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER},
-	//(62)
+	//(59)
   {PORTB, 16, PIO_TIMER_ALT, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH0, TCC0_CH0, EXTERNAL_INT_0},
-	//(63)
+	//(60)
   {PORTB, 17, PIO_TIMER_ALT, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH1, TCC0_CH1, EXTERNAL_INT_1},
-	//(64)
+	//(61)
   {PORTB, 22, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER},
-	//(65)
+	//(62)
   {PORTB, 23, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER},
-	//(66)
+	//(63)
   {PORTB, 30, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER},
-	//(67)
+	//(64)
   {PORTB, 31, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER},     
 
 };
@@ -267,3 +268,5 @@ void SERCOM5_Handler()
 {
   Serial.IrqHandler();
 }
+
+
