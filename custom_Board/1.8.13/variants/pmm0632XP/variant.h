@@ -1,13 +1,16 @@
 /*
   Copyright (c) 2014-2015 Arduino LLC.  All right reserved.
+
   This library is free software; you can redistribute it and/or
   modify it under the terms of the GNU Lesser General Public
   License as published by the Free Software Foundation; either
   version 2.1 of the License, or (at your option) any later version.
+
   This library is distributed in the hope that it will be useful,
   but WITHOUT ANY WARRANTY; without even the implied warranty of
   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
   See the GNU Lesser General Public License for more details.
+
   You should have received a copy of the GNU Lesser General Public
   License along with this library; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
@@ -30,7 +33,7 @@
 #define VARIANT_MCK			  (48000000ul)
 
 /*----------------------------------------------------------------------------
- *        Headers ahamd
+ *        Headers
  *----------------------------------------------------------------------------*/
 
 #include "WVariant.h"
@@ -55,7 +58,7 @@ extern "C" unsigned int PINCOUNT_fn();
 #endif
 #define PINS_COUNT           (PINCOUNT_fn())
 #define NUM_DIGITAL_PINS     (20u)
-#define NUM_ANALOG_INPUTS    (9u)
+#define NUM_ANALOG_INPUTS    (6u)
 #define NUM_ANALOG_OUTPUTS   (1u)
 #define analogInputToDigitalPin(p)  ((p < 6u) ? (p) + 14u : -1)
 
@@ -76,7 +79,7 @@ extern "C" unsigned int PINCOUNT_fn();
  */
 // #define digitalPinToTimer(P)
 
-// LEDs (not defined for PMM0632X)
+// LEDs
 #define PIN_LED_13           (13u)
 #define PIN_LED_RXL          (25u)
 #define PIN_LED_TXL          (26u)
@@ -86,143 +89,70 @@ extern "C" unsigned int PINCOUNT_fn();
 #define LED_BUILTIN          PIN_LED_13
 
 /*
- * Digital pins for PMM0632X
+ * Analog pins
  */
-//01. Analog inputs on screw terminal 
-#define PMM_AI_01          (51u) //PB05 : Analog Input 01
-#define PMM_AI_02          (25u) //PA02 : Analog Input 02
-#define PMM_AI_03          (50u) //PB04 : Analog Input 03
-#define PMM_AI_04          (46u) //PA03 : Analog Input 04
-#define PMM_AI_05          (3u) //PB09 : Analog Input 05
-#define PMM_AI_06          (52u) //PB06 : Analog Input 06
-#define PMM_AI_07          (2u) //PB08 : Analog Input 07
-#define PMM_AI_08          (53u) //PB07 : Analog Input 08
-#define PMM_AI_09          (11u) //PA07 : Analog Input 09
-#define PMM_AI_10          (4u) //PA04 : Analog Input 10
-#define PMM_AI_11          (10u) //PA06 : Analog Input 11
-#define PMM_AI_12          (5U) //PA05 : Analog Input 12
-#define PMM_AI_13          (15u) //PB02 : Analog Input 13
-#define PMM_AI_14          (16u) //PB03 : Analog Input 14
-#define PMM_AI_15          (55u) //PB01 : Analog Input 15
-#define PMM_AI_16          (54u) //PB00 : Analog Input 16
-//03b. Flash memory
-#define PMM_DO_FLASH_CS    (59u) //PB13 : Digital output : Flash chip select command 
-#define PMM_DO_FLASH_EN    (60u) //PB14 : Digital output : Flash chip select command 
+#define PMM_A0               (52ul) //PB05
+#define PMM_A1               (43ul) //PA02
+#define PMM_A2               (51ul) //PB04
+#define PMM_A3               (50ul) //PB03
+#define PMM_A4               (52ul) //PB09
+#define PMM_A5               (53ul) //PB06
+#define PMM_A6               (15ul) //PB08
+#define PMM_A7               (55ul) //PB07
+#define PMM_A8               (54ul) //PA07
+#define PMM_A9               (17ul) //PA04
+#define PMM_A10              (40ul) //PA06
+#define PMM_A11              (18ul) //PA05
+#define PMM_A12              (19ul) //PB02
+#define PMM_A13              (50ul) //PB03
+#define PMM_A14              (49ul) //PB01
+#define PMM_A15              (48ul) //PB00
 
-//03d. options 
-#define PMM_DI_INT        (62u)//PB16 : Digital Input : General interrupt from RTC or Extension boards  
-#define PMM_RUN       (43u) //PA21
-#define PMM_FAULT       (48u) //PA30
-#define PMM_A0/1      (18u) //PA30
-#define PMM_A1/1      (12u) //PA13
-#define PMM_A2/1      (28u) //PA12
-#define PMM_S0        (35u) //PB22
-#define PMM_S1        (27u) //PA23
-#define PMM_S2        (31u) //PA27
-#define PMM_S3        (32u) //PA28
+#define PMM_RUN           (39ul) //PA21
+#define PMM_FAULT         (62ul) //PB30
+#define PMM_S0            (30ul) //PB22
+#define PMM_S1            (33ul) //PA23
+#define PMM_S2            (26ul) //PA27
+#define PMM_S3            (27ul) //PA28
 
-
-
-
-
-
-
-
-
-//03c. Serial RS485
-#define PMM_DO_RDENA       (59u)//PB15 : Digital output : RS485 Direction control  
-
-#define PMM_DI_PROG        (20u) //PA16 : Digital Input for programming mode - near termination dip switch
-
-
-//03a. Ethernet controller
-#define PMM_DO_ETH_RST     (8u) //PA06 : Digital output : Ethernet controller reset command
-#define PMM_D1_ETH_INT     (9u) //PA07 : Digital Input : Ethernet controller interrupt 
-
-#define PMM_DI_LossOfPower  (10u)//PA13 : Digital Input :loos of power 
-#define PMM_DO_SCSn         (19u) //PA18 : Digital output : Ethernet controller chip select command  
-
-
-
-
-
-
-#define PMM_READY          (0u) //PA05
-#define PMM_DRDY           (1u) //PA06
-#define PMM_SER            (3u) //PA08
-#define PMM_RCLK           (4u) //PA09
-#define PMM_SRCLK          (5u) //PA10
-#define PMM_SRCLR#         (6u) //PA11
-#define PMM_Error          (11u) //PB03
+//#define PMM_DAC0             (14ul) //PA33
 //02. Dip switches 
-#define PMM_DI_PROG01      (29u) //PA27 : Digital Input - general (front panel dip switch )
-#define PMM_DI_PROG02      (44u) //PA03 : Digital Input - general (front panel dip switch)
-//03c. Serial RS485
-#define PMM_DO_RDENA        (13u)//PA14 : Digital output : RS485 Direction control  
-
-#define PMM_AI_WIZRST       (21u) //PA19 :
-#define PMM_AI_INTN         (11u)//PA20 :
+#define PMM_DI_PROG        (2ul) //PA14 : Digital Input for programming mode - near termination dip switch
+#define PMM_DI_PROG01      (38u) //PA13 : Digital Input - general (front panel dip switch )
+#define PMM_DI_PROG02      (22u) //PA12 : Digital Input - general (front panel dip switch)
 //03. Internal signals
+//03a. Ethernet controller
+//#define PMM_DO_ETH_RST     (16u) //PB09 : Digital output : Ethernet controller reset command
+//#define PMM_D1_ETH_INT     (17u) //PA04 : Digital Input : Ethernet controller interrupt 
+//#define PMM_DO_SCSn        (10u) //PA18 : Digital output : Ethernet controller chip select command  
+//03b. Flash memory
+#define PMM_DO_FLASH_EN     (58ul) //PB14 : Digital output : Flash Enable command
+#define PMM_DO_FLASH_CS     (57ul)//PB13 : Digital output : Flash chip select command 
+//03c. Serial RS485
+#define PMM_DO_RDENA        (59ul)//PB15 : Digital output : RS485 Direction control  
+//03d. options 
+#define PMM_DI_INT          (60u)//PB16 : Digital Input : General interrupt from RTC or Extension boards  
+//#define PMM_DI_LossOfPower        (11u)//PA02 : Digital Input :loos of power 
 
 
+static const uint8_t A0  = PMM_A0;
+static const uint8_t A1  = PMM_A1;
+static const uint8_t A2  = PMM_A2;
+static const uint8_t A3  = PMM_A3;
+static const uint8_t A4  = PMM_A4;
+static const uint8_t A5  = PMM_A5;
+static const uint8_t A6  = PMM_A6;
+static const uint8_t A7  = PMM_A7;
+static const uint8_t A8  = PMM_A8;
+static const uint8_t A9  = PMM_A9;
+static const uint8_t A10 = PMM_A10;
+static const uint8_t A11 = PMM_A11;
+static const uint8_t A12 = PMM_A12;
+static const uint8_t A13 = PMM_A13;
+static const uint8_t A14 = PMM_A14;
+static const uint8_t A15 = PMM_A15;
 
-
-
-
-
-
-
- //* Analog pins (not defined for PMM0632X)
- 
-#define PIN_A0               (14ul)
-#define PIN_A1               (15ul)
-#define PIN_A2               (16ul)
-#define PIN_A3               (17ul)
-#define PIN_A4               (18ul)
-#define PIN_A5               (19ul)
-// Add For 0632X
-#define PIN_A6               (4ul)
-#define PIN_A7               (3ul)
-#define PIN_A8               (1ul)
-#define PIN_A9               (0ul)
-
-
-#define PIN_DAC0             (14ul)
-
-
-
-static const uint8_t A1  = PMM_AI_01;
-static const uint8_t A2  = PMM_AI_02;
-static const uint8_t A3  = PMM_AI_03;
-static const uint8_t A4  = PMM_AI_04;
-static const uint8_t A5  = PMM_AI_05;
-static const uint8_t A6  = PMM_AI_06;
-static const uint8_t A7  = PMM_AI_07;
-static const uint8_t A8  = PMM_AI_08;
-static const uint8_t A9  = PMM_AI_09;
-static const uint8_t A10 = PMM_AI_10;
-static const uint8_t A11 = PMM_AI_11;
-static const uint8_t A12 = PMM_AI_12;
-static const uint8_t A13 = PMM_AI_13;
-static const uint8_t A14 = PMM_AI_14;
-static const uint8_t A15 = PMM_AI_15;
-static const uint8_t A16 = PMM_AI_16;
-
-
-
-
-
-// static const uint8_t DO1= PMM_DI_01  ;
-// static const uint8_t DO2= PMM_DI_02  ;
-// static const uint8_t DO3= PMM_DI_03  ;
-// static const uint8_t DO4= PMM_DI_04  ;
-// static const uint8_t DO5= PMM_DI_05  ;
-// static const uint8_t DO6= PMM_DI_06  ;
-// static const uint8_t DO7= PMM_DI_07  ;
-// static const uint8_t DO8= PMM_DI_08  ;
-
-
-static const uint8_t DAC0 = PIN_DAC0;
+static const uint8_t DAC0 = PMM_DAC0;
 #define ADC_RESOLUTION		12
 
 // Other pins
@@ -238,8 +168,7 @@ static const uint8_t ATN = PIN_ATN;
 #define PAD_SERIAL_TX       (UART_TX_PAD_2)
 #define PAD_SERIAL_RX       (SERCOM_RX_PAD_3)
 
-// Serial1 (not defined for PMM0632X)
-
+// Serial1
 #define PIN_SERIAL1_RX       (0ul)
 #define PIN_SERIAL1_TX       (1ul)
 #define PAD_SERIAL1_TX       (UART_TX_PAD_2)
@@ -257,7 +186,7 @@ static const uint8_t ATN = PIN_ATN;
 #define PAD_SPI_TX           SPI_PAD_2_SCK_3
 #define PAD_SPI_RX           SERCOM_RX_PAD_0
 
-//static const uint8_t SS	  = PIN_A2 ;	// SERCOM4 last PAD is present on A2 but HW SS isn't used. Set here only for reference.
+static const uint8_t SS	  = PMM_A2 ;	// SERCOM4 last PAD is present on A2 but HW SS isn't used. Set here only for reference.
 static const uint8_t MOSI = PIN_SPI_MOSI ;
 static const uint8_t MISO = PIN_SPI_MISO ;
 static const uint8_t SCK  = PIN_SPI_SCK ;
@@ -316,8 +245,6 @@ extern SERCOM sercom5;
 
 extern Uart Serial;
 extern Uart Serial1;
-extern Uart Serial2;
-extern Uart Serial3;
 
 #endif
 
@@ -351,3 +278,4 @@ unsigned int PINCOUNT_fn();
 #define SERIAL_PORT_HARDWARE_OPEN   Serial1
 
 #endif /* _VARIANT_ARDUINO_ZERO_ */
+
