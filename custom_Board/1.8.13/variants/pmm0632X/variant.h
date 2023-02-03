@@ -91,24 +91,43 @@ extern "C" unsigned int PINCOUNT_fn();
 /*
  * Analog pins
  */
-#define PMM_A0               (14ul)
-#define PMM_A1               (15ul)
-#define PMM_A2               (16ul)
-#define PMM_A3               (17ul)
-#define PMM_A4               (18ul)
-#define PMM_A5               (19ul)
-#define PMM_A6               (46ul)
-#define PMM_A7               (47ul)
-#define PMM_A8               (48ul)
-#define PMM_A9               (49ul)
-#define PMM_A10              (50ul)
-#define PMM_A11              (51ul)
-#define PMM_A12              (52ul)
-#define PMM_A13              (53ul)
-#define PMM_A14              (54ul)
-#define PMM_A15              (55ul)
+#define PMM_A0               (57ul) //PB13
+#define PMM_A1               (48ul) //PB00
+#define PMM_A2               (19ul) //PB02
+#define PMM_A3               (49ul) //PB01
+#define PMM_A4               (52ul) //PB05
+#define PMM_A5               (14ul) //PA02
+#define PMM_A6               (51ul) //PB04
+#define PMM_A7               (55ul) //PA03
+#define PMM_A8               (47ul) //PA07
+#define PMM_A9               (48ul) //PA06
+#define PMM_A10              (15ul) //PB08
+#define PMM_A11              (16ul) //PB09
+#define PMM_A12              (18ul) //PA05
+#define PMM_A13              (17ul) //PA04
+#define PMM_A14              (53ul) //PB06
+#define PMM_A15              (54ul) //PB07
 
-#define PMM_DAC0             (14ul)
+#define PMM_DAC0             (14ul) //PA33
+
+//02. Dip switches 
+#define PMM_DI_PROG        (35ul) //PA16 : Digital Input for programming mode - near termination dip switch
+//#define PMM_DI_PROG01      (42u) //PA03 : Digital Input - general (front panel dip switch )
+//#define PMM_DI_PROG02      (14u) //PA02 : Digital Input - general (front panel dip switch)
+//03. Internal signals
+//03a. Ethernet controller
+//#define PMM_DO_ETH_RST     (16u) //PB09 : Digital output : Ethernet controller reset command
+//#define PMM_D1_ETH_INT     (17u) //PA04 : Digital Input : Ethernet controller interrupt 
+//#define PMM_DO_SCSn        (10u) //PA18 : Digital output : Ethernet controller chip select command  
+//03b. Flash memory
+#define PMM_DO_FLASH_EN     (58ul) //PB14 : Digital output : Flash Enable command
+#define PMM_DO_FLASH_CS     (57ul)//PB13 : Digital output : Flash chip select command 
+//03c. Serial RS485
+#define PMM_DO_RDENA        (59ul)//PB15 : Digital output : RS485 Direction control  
+//03d. options 
+//#define PMM_DI_INT        (34u)//PA19 : Digital Input : General interrupt from RTC or Extension boards  
+//#define PMM_DI_LossOfPower        (11u)//PA02 : Digital Input :loos of power 
+
 
 static const uint8_t A0  = PMM_A0;
 static const uint8_t A1  = PMM_A1;
