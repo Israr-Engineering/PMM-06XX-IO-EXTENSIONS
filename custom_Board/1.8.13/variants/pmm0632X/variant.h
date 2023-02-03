@@ -55,7 +55,7 @@ extern "C" unsigned int PINCOUNT_fn();
 #endif
 #define PINS_COUNT           (PINCOUNT_fn())
 #define NUM_DIGITAL_PINS     (20u)
-#define NUM_ANALOG_INPUTS    (9u)
+#define NUM_ANALOG_INPUTS    (16u)
 #define NUM_ANALOG_OUTPUTS   (1u)
 #define analogInputToDigitalPin(p)  ((p < 6u) ? (p) + 14u : -1)
 
@@ -77,13 +77,13 @@ extern "C" unsigned int PINCOUNT_fn();
 // #define digitalPinToTimer(P)
 
 // LEDs (not defined for PMM0632X)
-#define PIN_LED_13           (13u)
-#define PIN_LED_RXL          (25u)
-#define PIN_LED_TXL          (26u)
-#define PIN_LED              PIN_LED_13
-#define PIN_LED2             PIN_LED_RXL
-#define PIN_LED3             PIN_LED_TXL
-#define LED_BUILTIN          PIN_LED_13
+// #define PIN_LED_13           (13u)
+// #define PIN_LED_RXL          (25u)
+// #define PIN_LED_TXL          (26u)
+// #define PIN_LED              PIN_LED_13
+// #define PIN_LED2             PIN_LED_RXL
+// #define PIN_LED3             PIN_LED_TXL
+// #define LED_BUILTIN          PIN_LED_13
 
 /*
  * Digital pins for PMM0632X
@@ -117,13 +117,6 @@ extern "C" unsigned int PINCOUNT_fn();
 #define PMM_DIP7           (65u) //PB31
 #define PMM_DIP9           (33u) //PB22
 
-
-
-
-
-
-
-
 //03a. Ethernet controller
 #define PMM_DO_ETH_RST     (8u) //PA06 : Digital output : Ethernet controller reset command
 #define PMM_D1_ETH_INT     (9u) //PA07 : Digital Input : Ethernet controller interrupt 
@@ -131,10 +124,6 @@ extern "C" unsigned int PINCOUNT_fn();
 #define PMM_DI_LossOfPower  (10u)//PA13 : Digital Input :loos of power 
 #define PMM_DO_SCSn         (19u) //PA18 : Digital output : Ethernet controller chip select command  
 #define PMM_INT             (13u) //PB02
-
-
-
-
 
 #define PMM_READY          (0u) //PA05
 #define PMM_DRDY           (1u) //PA06
