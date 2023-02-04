@@ -152,8 +152,8 @@ static const uint8_t A13 = PMM_A13;
 static const uint8_t A14 = PMM_A14;
 static const uint8_t A15 = PMM_A15;
 
-static const uint8_t DAC0 = PMM_DAC0;
-#define ADC_RESOLUTION		12
+//static const uint8_t DAC0 = PMM_DAC0;
+//#define ADC_RESOLUTION		12
 
 // Other pins
 #define PIN_ATN              (38ul)
