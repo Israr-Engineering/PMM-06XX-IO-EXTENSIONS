@@ -122,7 +122,7 @@ extern "C" unsigned int PINCOUNT_fn();
 //#define PMM_DAC0             (14ul) //PA33
 //02. Dip switches 
 #define PMM_DI_PROG        (59ul) //PB15 : Digital Input for programming mode - near termination dip switch
-#define PMM_DI_PROG01      (22u) //PA12 : Digital Input - general (front panel dip switch )
+#define PMM_DI_PROG01      (22ul) //PA12 : Digital Input - general (front panel dip switch )
 #define PMM_DI_PROG02      (38u) //PA13 : Digital Input - general (front panel dip switch)
 //03. Internal signals
 //03a. Ethernet controller
@@ -135,7 +135,7 @@ extern "C" unsigned int PINCOUNT_fn();
 //03c. Serial RS485
 //#define PMM_DO_RDENA        (59ul)//PB15 : Digital output : RS485 Direction control  
 //03d. options 
-#define PMM_DI_INT          (2u)//PA14 : Digital Input : General interrupt from RTC or Extension boards  
+#define PMM_DI_INT          (2ul)//PA14 : Digital Input : General interrupt from RTC or Extension boards  
 //#define PMM_DI_LossOfPower        (11u)//PA02 : Digital Input :loos of power 
 
 

@@ -131,7 +131,7 @@ extern "C" unsigned int PINCOUNT_fn();
 //03c. Serial RS485
 #define PMM_DO_RDENA        (59ul)//PB15 : Digital output : RS485 Direction control  
 //03d. options 
-#define PMM_DI_INT          (60u)//PB16 : Digital Input : General interrupt from RTC or Extension boards  
+#define PMM_DI_INT          (60ul)//PB16 : Digital Input : General interrupt from RTC or Extension boards  
 //#define PMM_DI_LossOfPower        (11u)//PA02 : Digital Input :loos of power 
 
 
