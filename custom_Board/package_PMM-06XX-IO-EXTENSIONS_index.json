@@ -11,7 +11,7 @@
         { 
           "name": "PMM-06XX-IO-EXTENSIONS", 
           "architecture": "samd",
-          "version": "0.1.1",
+          "version": "0.1.3",
           "category": "Contributed",
           "url": "https://github.com/Israr-Engineering/PMM-06XX-IO-EXTENSIONS/blob/main/custom_Board/PMM.zip?raw=true",
           "archiveFileName": "PMM.zip",
