@@ -87,25 +87,25 @@ extern "C" unsigned int PINCOUNT_fn();
 
 
 /*
- * Digital pins for PMM0620
+ * Digital pins for PMM0620X
  */
 //01. Digital inputs on screw terminal 
-#define PMM_DI0          (22ul) //PA16 : Digital Input 01
-#define PMM_DI1          (3ul) //PB09 : Digital Input 02
-#define PMM_DI2          (9ul)  //PA11 : Digital Input 03
-#define PMM_DI3          (11ul)  //PA07 : Digital Input 04
-#define PMM_DI4          (24ul)  //PA17 : Digital Input 05
-#define PMM_DI5          (4ul)  //PA04 : Digital Input 06
-#define PMM_DI6          (12ul)  //PA13 : Digital Input 07
-#define PMM_DI7          (6ul) //PA08 : Digital Input 08
-#define PMM_DI8          (23ul)  //PA19 : Digital Input 09
-#define PMM_DI9          (17ul)  //PA06 : Digital Input 10
-#define PMM_DI10         (19ul) //PA15 : Digital Input 11
-#define PMM_DI11         (8ul) //PA10 : Digital Input 12
-#define PMM_DI12         (5ul) //PA05 : Digital Input 13
-#define PMM_DI13         (7ul) //PA09 : Digital Input 14
-#define PMM_DI14         (21ul) //PA18 : Digital Input 15
-#define PMM_DI15         (18ul) //PA14 : Digital Input 16
+#define PMM_DI0          (22ul) //PA16 
+#define PMM_DI1          (3ul)  //PB09 
+#define PMM_DI2          (9ul)  //PA11 
+#define PMM_DI3          (11ul) //PA07 
+#define PMM_DI4          (24ul) //PA17 
+#define PMM_DI5          (4ul)  //PA04 
+#define PMM_DI6          (12ul) //PA13 
+#define PMM_DI7          (6ul)  //PA08 
+#define PMM_DI8          (23ul) //PA19 
+#define PMM_DI9          (17ul) //PA06 
+#define PMM_DI10         (19ul) //PA15 
+#define PMM_DI11         (8ul)  //PA10 
+#define PMM_DI12         (5ul)  //PA05
+#define PMM_DI13         (7ul)  //PA09 
+#define PMM_DI14         (21ul) //PA18 
+#define PMM_DI15         (18ul) //PA14 
 
 //02. Dip switches 
 #define PMM_DI_PROG      (26ul) //PB08 : Digital Input for programming mode - near termination dip switch

@@ -15,8 +15,8 @@
           "category": "Contributed",
           "url": "https://github.com/Israr-Engineering/PMM-06XX-IO-EXTENSIONS/blob/main/custom_Board/PMM.zip?raw=true",
           "archiveFileName": "PMM.zip",
-          "checksum": "SHA-256:58BDA38586ECC08C2C9D493E9185F0C4EF5CF1F93984633D68EC8243456286D4",
-          "size": "7774711",
+          "checksum": "SHA-256:8163A01BF958411CFDA427A68230C2A68C98DE20EC9BE30305DFB1470F4ADAED",
+          "size": "7774212",
           "boards": [
 
             {"name": "PMM0620X"},
