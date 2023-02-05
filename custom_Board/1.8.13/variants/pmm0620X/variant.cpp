@@ -1,5 +1,4 @@
 
-
 #include "variant.h"
 
 /*
@@ -16,6 +15,40 @@ const PinDescription g_APinDescription[] =
          //(1)
          { PORTA, 10, PIO_SERCOM, (PIN_ATTR_DIGITAL), No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_10 }, // TX: SERCOM0/PAD[2]
         // Edited 0632
+
+
+        //(2)
+        {PORTB, 8, PIO_ANALOG, (PIN_ATTR_PWM | PIN_ATTR_TIMER), ADC_Channel2, PWM4_CH0, TC4_CH0, EXTERNAL_INT_8}, // ADC/AIN[2]
+        //(3)
+        {PORTB, 9, PIO_ANALOG, (PIN_ATTR_PWM | PIN_ATTR_TIMER), ADC_Channel3, PWM4_CH1, TC4_CH1, EXTERNAL_INT_9}, // ADC/AIN[3] 
+        //(4)
+        {PORTA, 4, PIO_ANALOG, 0, ADC_Channel4, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_4},                        // ADC/AIN[4]
+        //(5)
+        {PORTA, 5, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM1_CH0, TCC1_CH0, EXTERNAL_INT_6}, // TCC1/WO[0]
+        //(6)
+        {PORTA, 8, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER | PIN_ATTR_ANALOG), ADC_Channel16, PWM0_CH0, TCC0_CH0, EXTERNAL_INT_NMI}, // TCC0/WO[0]
+        //(7)
+        {PORTA, 9, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER | PIN_ATTR_ANALOG), ADC_Channel17, PWM0_CH1, TCC0_CH1, EXTERNAL_INT_9},   // TCC0/WO[1]
+        //(8)
+        {PORTA, 10, PIO_SERCOM, (PIN_ATTR_DIGITAL | PIN_ATTR_ANALOG), ADC_Channel18, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_10}, // TX: SERCOM0/PAD[2]
+        //(9)
+        {PORTA, 11, PIO_SERCOM, (PIN_ATTR_DIGITAL | PIN_ATTR_ANALOG), ADC_Channel19, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_11}, // RX: SERCOM0/PAD[3]
+       
+
+
+
+       
+       
+       
+        //(10)
+        {PORTA, 6, PIO_ANALOG, 0, ADC_Channel5, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_5},                                                      // ADC/AIN[5]
+        //(11)
+        {PORTA, 7, PIO_TIMER, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER), No_ADC_Channel, PWM1_CH1, TCC1_CH1, EXTERNAL_INT_7}, // TCC1/WO[1]
+        
+        //(12)
+        {PORTA, 13, PIO_PWM, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM), No_ADC_Channel, PWM0_CH5, NOT_ON_TIMER, EXTERNAL_INT_13},       // EIC/EXTINT[13] *TCC2/WO[1] TCC0/WO[7]
+        //(13)
+        {PORTA, 20, PIO_TIMER_ALT, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH6, TCC0_CH6, EXTERNAL_INT_4}, // TCC0/WO[6]
         //(14)
         {PORTA, 21, PIO_TIMER_ALT, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM | PIN_ATTR_TIMER_ALT), No_ADC_Channel, PWM0_CH7, TCC0_CH7, EXTERNAL_INT_5}, // TCC0/WO[7]
         //(15)
@@ -129,7 +162,6 @@ const PinDescription g_APinDescription[] =
         //(42)
         {PORTA, 7, PIO_PWM, (PIN_ATTR_DIGITAL | PIN_ATTR_PWM), No_ADC_Channel, PWM1_CH1, NOT_ON_TIMER, EXTERNAL_INT_NONE},      // Pin 9
 
-        // 42 (AREF)
         //(43)
         {PORTA, 3, PIO_ANALOG, PIN_ATTR_ANALOG, No_ADC_Channel, NOT_ON_PWM, NOT_ON_TIMER, EXTERNAL_INT_NONE}, // DAC/VREFP
 
