@@ -143,18 +143,18 @@ extern "C" unsigned int PINCOUNT_fn();
 #define PMM_DI_INT           (2ul)//PA14 : Digital Input : General interrupt from RTC or Extension boards  
 //#define PMM_DI_LossOfPower        (11u)//PA02 : Digital Input :loos of power 
 
-static const uint8_t DI0  = PMM_DI_0;
-static const uint8_t DI1  = PMM_DI_01;
-static const uint8_t DI2  = PMM_DI_02;
-static const uint8_t DI3  = PMM_DI_03;
-static const uint8_t DI4  = PMM_DI_04;
-static const uint8_t DI5  = PMM_DI_05;
-static const uint8_t DI6  = PMM_DI_06;
-static const uint8_t DI7  = PMM_DI_07;
-static const uint8_t DI8  = PMM_DI_08;
-static const uint8_t DI9  = PMM_DI_09;
-static const uint8_t DI10 = PMM_DI_10;
-static const uint8_t DI11 = PMM_DI_11;
+static const uint8_t DI0  = PMM_DI0;
+static const uint8_t DI1  = PMM_DI1;
+static const uint8_t DI2  = PMM_DI2;
+static const uint8_t DI3  = PMM_DI3;
+static const uint8_t DI4  = PMM_DI4;
+static const uint8_t DI5  = PMM_DI5;
+static const uint8_t DI6  = PMM_DI6;
+static const uint8_t DI7  = PMM_DI7;
+static const uint8_t DI8  = PMM_DI8;
+static const uint8_t DI9  = PMM_DI9;
+static const uint8_t DI10 = PMM_DI10;
+static const uint8_t DI11 = PMM_DI11;
 
 static const uint8_t DO0  = PMM_DO0;
 static const uint8_t DO1  = PMM_DO1;
