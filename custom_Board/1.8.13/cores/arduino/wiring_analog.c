@@ -128,10 +128,12 @@ void analogReference(eAnalogReference mode)
 int analogRead(pin_size_t pin)
 {
   uint32_t valueRead = 0;
-
-  if (pin < A0) {
+  
+// jayoosi Ac --> A0
+  if (pin < Ac) {
     pin += A0;
   }
+}
 
   pinPeripheral(pin, PIO_ANALOG);
 
