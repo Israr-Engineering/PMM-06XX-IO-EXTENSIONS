@@ -128,13 +128,13 @@ extern "C" unsigned int PINCOUNT_fn();
 /*
  * Analog pins
  */
-#define PIN_A0               (14ul)
+//#define PIN_A0               (14ul)
 #define PIN_A1               (15ul)
 #define PIN_A2               (16ul)
 #define PIN_A3               (17ul)
 #define PIN_A4               (18ul)
 #define PIN_A5               (19ul)
-// Add For 0632
+// Add For 0632X
 #define PIN_A6               (4ul)
 #define PIN_A7               (3ul)
 #define PIN_A8               (1ul)
