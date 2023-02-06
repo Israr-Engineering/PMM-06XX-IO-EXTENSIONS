@@ -129,9 +129,9 @@ int analogRead(pin_size_t pin)
 {
   uint32_t valueRead = 0;
   
-//jayoosi AC->A0
-  if (pin < AC) {
-    pin += AC;
+
+  if (pin < A0) {
+    pin += A0;
   }
 }
 
