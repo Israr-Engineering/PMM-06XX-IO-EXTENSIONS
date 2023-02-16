@@ -91,7 +91,7 @@ extern "C" unsigned int PINCOUNT_fn();
 //01. Digital inputs on screw terminal 
 #define PMM_DO0          (3ul)  //PB09 
 #define PMM_DO1          (2ul) //PB08 
-#define PMM_DO2          (44ul) //PA03 
+#define PMM_DO2          (43ul) //PA03 
 #define PMM_DO3          (25ul) //PA02 
 #define PMM_DO4          (22ul) //PA16 
 #define PMM_DO5          (19ul) //PA15 
@@ -142,23 +142,32 @@ extern "C" unsigned int PINCOUNT_fn();
 //#define PIN_DAC0             (14ul)
 
           
-static const uint8_t  DO0  = PMM_DO0;          
-static const uint8_t  DO1  = PMM_DO1;         
-static const uint8_t  DO2  = PMM_DO2;         
-static const uint8_t  DO3  = PMM_DO3;        
-static const uint8_t  DO4  = PMM_DO4;       
-static const uint8_t  DO5  = PMM_DO5;          
-static const uint8_t  DO6  = PMM_DO6;          
-static const uint8_t  DO7  = PMM_DO7;          
-static const uint8_t  DO8  = PMM_DO8;          
-static const uint8_t  DO9  = PMM_DO9;          
-static const uint8_t  DO10 = PMM_DO10;          
-static const uint8_t  DO11 = PMM_DO11;          
-static const uint8_t  DO12 = PMM_DO12;          
-static const uint8_t  DO13 = PMM_DO13;          
-static const uint8_t  DO14 = PMM_DO14;         
-static const uint8_t  DO15 = PMM_DO15;          
+// static const uint8_t  DO0  = PMM_DO0;          
+// static const uint8_t  DO1  = PMM_DO1;         
+// static const uint8_t  DO2  = PMM_DO2;         
+// static const uint8_t  DO3  = PMM_DO3;        
+// static const uint8_t  DO4  = PMM_DO4;       
+// static const uint8_t  DO5  = PMM_DO5;          
+// static const uint8_t  DO6  = PMM_DO6;          
+// static const uint8_t  DO7  = PMM_DO7;          
+// static const uint8_t  DO8  = PMM_DO8;          
+// static const uint8_t  DO9  = PMM_DO9;          
+// static const uint8_t  DO10 = PMM_DO10;          
+// static const uint8_t  DO11 = PMM_DO11;          
+// static const uint8_t  DO12 = PMM_DO12;          
+// static const uint8_t  DO13 = PMM_DO13;          
+// static const uint8_t  DO14 = PMM_DO14;         
+// static const uint8_t  DO15 = PMM_DO15;          
 
+// Edit Mohannad
+
+static const uint8_t PMM_DO_Pins[16] = {PMM_DO0,PMM_DO1,PMM_DO2,PMM_DO3,PMM_DO4,PMM_DO5,
+PMM_DO6,PMM_DO7,PMM_DO8,PMM_DO9,PMM_DO10,PMM_DO11,PMM_DO12,PMM_DO13,PMM_DO14,PMM_DO15};
+
+
+ 
+
+// End Mohanad
 
 //static const uint8_t DAC0 = PIN_DAC0;
 //#define ADC_RESOLUTION		12
