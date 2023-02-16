@@ -89,24 +89,24 @@ extern "C" unsigned int PINCOUNT_fn();
  * Digital pins for PMM0625X
  */
 //01. Digital inputs on screw terminal 
-#define PMM_DO0          (5ul)  //PA09 
-#define PMM_DO1          (22ul) //PB08 
+#define PMM_DO0          (3ul)  //PB09 
+#define PMM_DO1          (2ul) //PB08 
 #define PMM_DO2          (44ul) //PA03 
-#define PMM_DO3          (21ul) //PA02 
-#define PMM_DO4          (18ul) //PA16 
-#define PMM_DO5          (15ul) //PA15 
-#define PMM_DO6          (14ul) //PA14 
-#define PMM_DO7          (8ul)  //PA13 
-#define PMM_DO8          (3ul)  //PA07 
-#define PMM_DO9          (2ul)  //PA06 
-#define PMM_DO10         (1ul) //PA05 
-#define PMM_DO11         (0ul) //PA04 
-#define PMM_DO12         (7ul) //PA11
-#define PMM_DO13         (6ul) //PA10 
-#define PMM_DO14         (5ul) //PA09 
-#define PMM_DO15         (4ul) //PA08 
+#define PMM_DO3          (25ul) //PA02 
+#define PMM_DO4          (22ul) //PA16 
+#define PMM_DO5          (19ul) //PA15 
+#define PMM_DO6          (18ul) //PA14 
+#define PMM_DO7          (12ul)  //PA13 
+#define PMM_DO8          (11ul)  //PA07 
+#define PMM_DO9          (10ul)  //PA06 
+#define PMM_DO10         (5ul)  //PA05 
+#define PMM_DO11         (4ul)  //PA04 
+#define PMM_DO12         (9ul)  //PA11
+#define PMM_DO13         (8ul)  //PA10 
+#define PMM_DO14         (7ul)  //PA09 
+#define PMM_DO15         (6ul)  //PA08 
 //02. Dip switches 
-#define PMM_DI_PROG         (9ul) //PA20 : Digital Input for programming mode - near termination dip switch
+#define PMM_DI_PROG         (13ul) //PA20 : Digital Input for programming mode - near termination dip switch
 //#define PMM_DI_PROG01      (9u) //PA11 : Digital Input - general (front panel dip switch )
 //#define PMM_DI_PROG02      (1u) //PA10 : Digital Input - general (front panel dip switch)
 //03. Internal signals
@@ -116,9 +116,9 @@ extern "C" unsigned int PINCOUNT_fn();
 //#define PMM_DO_SCSn        (19u) //PA18 : Digital output : Ethernet controller chip select command  
 //03b. Flash memory
 //#define PMM_DO_FLASH_EN     (16u) //PA14 : Digital output : Flash Enable command
-#define PMM_DO_FLASH_CS     (40ul)//PA17 : Digital output : Flash chip select command 
+#define PMM_DO_FLASH_CS     (24ul)//PA17 : Digital output : Flash chip select command 
 //03c. Serial RS485
-#define PMM_DO_RDENA        (29ul)//PA27 : Digital output : RS485 Direction control  
+#define PMM_DO_RDENA        (30ul)//PA27 : Digital output : RS485 Direction control  
 //03d. options 
 //#define PMM_DI_INT        (13u)//PB02 : Digital Input : General interrupt from RTC or Extension boards  
 //#define PMM_DI_LossOfPower        (10u)//PA13 : Digital Input :loos of power 
