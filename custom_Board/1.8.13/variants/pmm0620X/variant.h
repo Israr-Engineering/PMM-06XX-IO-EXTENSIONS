@@ -144,23 +144,27 @@ extern "C" unsigned int PINCOUNT_fn();
 
 //#define PIN_DAC0             (14ul)
 
-static const uint8_t DI0 = PMM_DI0  ;
-static const uint8_t DI1 = PMM_DI1  ;
-static const uint8_t DI2 = PMM_DI2  ;
-static const uint8_t DI3 = PMM_DI3  ;
-static const uint8_t DI4 = PMM_DI4  ;
-static const uint8_t DI5 = PMM_DI5  ;
-static const uint8_t DI6 = PMM_DI6  ;
-static const uint8_t DI7 = PMM_DI7  ;
-static const uint8_t DI8 = PMM_DI8  ;
-static const uint8_t DI9 = PMM_DI9  ;
-static const uint8_t DI10= PMM_DI10  ;
-static const uint8_t DI11= PMM_DI11  ;
-static const uint8_t DI12= PMM_DI12  ;
-static const uint8_t DI13= PMM_DI13  ;
-static const uint8_t DI14= PMM_DI14  ;
-static const uint8_t DI15= PMM_DI15  ;
+// static const uint8_t DI0 = PMM_DI0  ;
+// static const uint8_t DI1 = PMM_DI1  ;
+// static const uint8_t DI2 = PMM_DI2  ;
+// static const uint8_t DI3 = PMM_DI3  ;
+// static const uint8_t DI4 = PMM_DI4  ;
+// static const uint8_t DI5 = PMM_DI5  ;
+// static const uint8_t DI6 = PMM_DI6  ;
+// static const uint8_t DI7 = PMM_DI7  ;
+// static const uint8_t DI8 = PMM_DI8  ;
+// static const uint8_t DI9 = PMM_DI9  ;
+// static const uint8_t DI10= PMM_DI10  ;
+// static const uint8_t DI11= PMM_DI11  ;
+// static const uint8_t DI12= PMM_DI12  ;
+// static const uint8_t DI13= PMM_DI13  ;
+// static const uint8_t DI14= PMM_DI14  ;
+// static const uint8_t DI15= PMM_DI15  ;
 
+
+// Edit Mohannad
+static const uint8_t PMM_DI_Pins[16] = {PMM_DI0,PMM_DI1,PMM_DI2,PMM_DI3,PMM_DI4,PMM_DI5,
+PMM_DI6,PMM_DI7,PMM_DI8,PMM_DI9,PMM_DI10,PMM_DI11,PMM_DI12,PMM_DI13,PMM_DI14,PMM_DI15};
 
 
 //static const uint8_t DAC0 = PIN_DAC0;
