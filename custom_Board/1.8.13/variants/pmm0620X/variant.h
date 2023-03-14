@@ -99,7 +99,7 @@ extern "C" unsigned int PINCOUNT_fn();
 #define PMM_DI6          (12ul) //PA13 
 #define PMM_DI7          (6ul)  //PA08 
 #define PMM_DI8          (23ul) //PA19 
-#define PMM_DI9          (17ul) //PA06 
+#define PMM_DI9          (10ul) //PA06 
 #define PMM_DI10         (19ul) //PA15 
 #define PMM_DI11         (8ul)  //PA10 
 #define PMM_DI12         (5ul)  //PA05
